@@ -10,8 +10,8 @@ while [ $# -gt 0 ]; do
 	shift 2
 	
 	if ! grep -qE "^#?${key}=" "$conf"; then
-		echo >&2 "error: '$key' not found in '$conf'"
-		exit 1
+		echo >&2 "warning: '$key' not found in '$conf', appending"
+		echo "${key}=${value}" >> "$conf"
 	fi
 	
 	sed_escaped_value="$(echo "$value" | sed 's/[\/&]/\\&/g')"

@@ -5,6 +5,7 @@ opts=(
 	dc_local_interfaces '0.0.0.0 ; ::0'
 	dc_other_hostnames ''
 	dc_relay_nets '0.0.0.0/0'
+	IGNORE_SMTP_LINE_LENGTH_LIMIT 'true'
 )
 
 if [ "$GMAIL_USER" -a "$GMAIL_PASSWORD" ]; then
